@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/contact.jpg')}})">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>ADMIN PANEL</h1>
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>
+                    Edit post:
+                </h1>
+                <hr>
+                <h1>
+                    Upload a file
+                </h1>
+                <form action="/uploader" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file1">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <hr>
+
+                <div class="my-5">
+                    <form name='sentMessage' id='ContactForm' action='/edit/{{sr_no}}' method='post' novalidate>
+                        <div class="form-floating">
+                            <input class="form-control" id="title" type="text" placeholder="Title of the post..."
+                                name='title' value="{{post.title}}" />
+                            <label for="title">Title</label>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="subheading" type="text"
+                                placeholder="Sub-heading of the post..." name='subheading'
+                                value="{{post.sub_heading}}" />
+                            <label for="subheading">Sub-heading</label>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="slug" type="text" placeholder="Slug of the post..."
+                                name='slug' value="{{post.slug}}" />
+                            <label for="slug">Slug</label>
+                        </div>
+                        <div class="form-floating">
+
+
+                            <input class="form-control" id="content" placeholder="Content of the post..." name='content'
+                                value="{{post.content}}" style="height: 12rem" />
+
+                            <label for="content">Content</label>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="img_file" type="text" placeholder="image file..."
+                                name='img_file' value="{{post.img_file}}" />
+                            <label for="img_file">Image file</label>
+                        </div>
+
+                        <br />
+                        <button class="btn btn-primary text-uppercase" type="submit">Send</button>
+
+
+                    </form>
+                    <hr>
+                    <a href="/dashboard"><button class="btn btn-primary text-uppercase">Dashoard home</button></a>
+                    <a href="/logout"><button class="btn btn-primary text-uppercase">Log out</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

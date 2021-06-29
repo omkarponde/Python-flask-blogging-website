@@ -1,0 +1,21 @@
+{
+  "params": {
+    "local_server"        : "True",
+    "local_uri"           : "mysql://root:@localhost/avalanche_gaming",
+    "prod_uri"            : "mysql://root:@localhost/avalanche_gaming",
+    "fb_url"              : "https://facebook.com/avalanche_gaming",
+    "tw_url"              : "https://twitter.com/avalanche_gaming",
+    "gh_url"              : "https://github.com/avalanche_gaming",
+    "blog_name"           : "AVALANCHE GAMING",
+    "blog_h_name"         : "Avalanche_gaming",
+    "tag_line"            : "A blogged liked by gamers.",
+    "gmail-user"          : "your_email@example.com",
+    "gmail-passw"         : "your_email_password",
+    "about_me"            : "Hello everyone!! My name is Omkar Ponde.\nAvalanche gaming blog is an attempt by me\nto keep game lovers updated with\ngaming news and information about what is going on \nin gaming universe.\nI hope you guys will enjoy reading my blog.\nThank you. ",
+    "no_of_posts"         : 3,
+    "logo_image"          : "favicon.ico",
+    "admin-user"          : "@valanche",
+    "admin-passw"         : "g@ming",
+    "upload_location"     : "C:\\Users\\91951\\PycharmProjects\\Flask Project\\static\\img"
+  }
+}

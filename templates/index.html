@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/home1.jpg')}})">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>{{params['blog_name']}}</h1>
+                    <span class="subheading">{{params['tag_line']}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+
+
+
+
+
+
+
+            {% for post in posts %}
+            
+
+            <!-- Post preview-->
+            <div class="post-preview">
+                <a href="/post/{{post.slug}}">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    <h3 class="post-subtitle">{{post.sub_heading}}</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Avalanche gaming</a>
+                    on {{post.date}}
+                </p>
+            </div>
+            {{ post.content[0:200] }}...
+            <hr>
+        </a> </li>
+            {% endfor %}
+
+
+            <!-- Pager-->
+        <div class="clearfix">
+            <a class="btn btn-primary float-left" href="{{prevp}}">
+                &larr;Previous
+            </a>
+            <a class="btn btn-primary float-right" href="{{nextp}}">
+                Next &rarr;
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
